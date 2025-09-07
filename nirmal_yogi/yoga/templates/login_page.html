@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Nirmal Yogi</title>
+    <link rel="stylesheet" href="{% static 'C:\Users\Pranavi Rawat\Desktop\PRANAVI\DjangoProject\myworld\nirmal_yogi\yoga\static\yoga\style.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login to Nirmal Yogi</h1>
+        <form method="POST">
+            {% csrf_token %}
+	<label>Username: </label>
+         <input type="text" name="username" placeholder="Username" required><br><br>
+	<label>Password: </label>
+         <input type="password" name="password" placeholder="Password" required><br><br><br>
+         <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

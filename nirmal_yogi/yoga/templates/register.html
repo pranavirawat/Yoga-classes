@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Nirmal Yogi</title>
+    <link rel="stylesheet" href="{% static 'C:\Users\Pranavi Rawat\Desktop\PRANAVI\DjangoProject\myworld\nirmal_yogi\yoga\static\yoga\style.css' %}">
+
+    <script>
+    function showAlert() {
+        alert("Registration Successful!");
+        return true;  // Allow the form to submit after alert
+    }
+    </script>
+</head>
+<body>
+    <h1>Register for Yoga Classes</h1>
+    <form method="POST" onsubmit="return showAlert();">
+        {% csrf_token %}
+	<label>Name:</label>
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Others"> Others<br><br>
+
+        <label>Fitness Goals:</label><br>
+        <input type="checkbox" name="goal" value="Improved Mental Health"> Improved Mental Health<br>
+        <input type="checkbox" name="goal" value="Weight Loss"> Weight Loss<br>
+        <input type="checkbox" name="goal" value="Lifestyle"> Lifestyle<br><br>
+
+        <label>Preferred Days:</label>
+        <select name="days" required>
+            <option value="Weekends">Weekends</option>
+            <option value="Monday to Friday">Monday to Friday</option>
+            <option value="All week">All week</option>
+        </select><br><br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
+
